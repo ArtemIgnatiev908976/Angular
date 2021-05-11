@@ -1,15 +1,28 @@
 <h1>Hello world</h1>
 
-<button (click)="toggle = !toggle">Toggle</button>
-<button (click)="toggle = 111" >Set1111</button>
-<div [ngSwitch]="toggle" >
-  <p *ngSwitchCase="true" class="red"> Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-  <p *ngSwitchCase="false" class="blue"> Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
 
-  <p *ngSwitchDefault>123</p>
+<!--<ul>-->
+<!--  <li *ngFor="let number of arr; let idNumber=index">-->
+<!--   <strong>{{idNumber+1}}   {{number}}</strong>-->
+<!--  </li>-->
 
-</div>
+<!--</ul>-->
 
+
+<ul style="list-style: none">
+  <li *ngFor="let post of obj" >
+<p>{{post.title}}<b>{{post.author}}</b>  </p>
+    <ul>
+      <li *ngFor="let comment of post.comments">
+      <div>
+        <small>{{comment.name}}</small>
+        <p>{{comment.text}}</p>
+      </div>
+      </li>
+    </ul>
+  </li>
+
+</ul>
 
 
 
