@@ -18,4 +18,8 @@ posts: Post[] = [
   {title: 'Хочу выучить Angular компоненты', text: ' я все еще учу компоненты', id:1},
   {title: 'Следующий блок ', text: ' будет про директивы и еще про пайпы', id:2}
 ]
+  updatePosts(post: Post){
+  this.posts.unshift(post)
+    console.log('Post',post)
+  }
 }
