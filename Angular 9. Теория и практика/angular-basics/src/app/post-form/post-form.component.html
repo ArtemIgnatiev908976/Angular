@@ -1,10 +1,10 @@
-
 <div>
   <input
     type="text"
     class="form-control"
     placeholder="title..."
-  [(ngModel)]="title"
+    [(ngModel)]="title"
+    #titleInput
   >
   <input
     type="text"
@@ -15,5 +15,5 @@
 
 
   <button class="btn" (click)="addPost()"> Добавить пост</button>
-
+  <button class="btn" (click)="focusTitle()">Фокус в title</button>
 </div>
