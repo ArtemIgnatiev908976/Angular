@@ -4,7 +4,11 @@
   <app-post-form></app-post-form>
   <hr>
 
-  <app-post></app-post>
+  <app-post
+    *ngFor="let p of posts"
+    [post]="p"
+  ></app-post>
+
 </div>
 
 
