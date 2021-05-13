@@ -12,6 +12,7 @@
   <app-post
     *ngFor="let p of posts"
     [post]="p"
+    (onRemove)="removePost($event)"
   >
 
     <div #info>
