@@ -9,5 +9,6 @@ export class AppComponent {
 
   e: number = Math.E
   str = 'Hello world'
+  date: Date = new Date()
 
 }
