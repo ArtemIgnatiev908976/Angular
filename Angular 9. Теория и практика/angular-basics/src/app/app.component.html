@@ -1,7 +1,8 @@
 <div class="container">
   <h1>Angular Directives</h1>
 
-  <p appStyle>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, laborum!</p>
+  <p [appStyle]="'green'" fontWeight="bold" [dStyles]="{border:'1px solid blue', borderRadius:'5px'}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, laborum!</p>
+  <p [appStyle]="'yellow'" fontWeight="bold" [dStyles]="{border:'1px solid red', borderRadius:'15px'}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, laborum!</p>
 </div>
 
 
