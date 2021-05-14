@@ -2,17 +2,18 @@
   <h1>Angular Pipes</h1>
 
   <p>
-<!--    сколько цифр показывать после запятой-->
-    {{ e | number:'1.1-5' }}
+{{str | uppercase }}
+{{str |  lowercase}}
+{{str |  titlecase}}
+{{str | uppercase |  lowercase |  titlecase}}
   </p>
+<p>
+<!--  Вырезаеся символ-->
+  {{str | slice:1:5}}
 
-  <p>
-    {{ e | number:'3.1-2' }}
-  </p>
+</p>
 
-  <p>
-    {{ e | number:'1.0-0' }}
-  </p>
+
 </div>
 
 
