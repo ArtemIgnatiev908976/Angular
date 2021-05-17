@@ -6,15 +6,14 @@ import {LocalCounterService} from "./services/local-counter.service";
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers:[LocalCounterService]
+  providers: [LocalCounterService]
 })
 export class AppComponent {
 
-  constructor(public  appCounterService: AppCounterService,
+  constructor(public appCounterService: AppCounterService,
               public localCounterService: LocalCounterService
-
-
-              ) {}
+  ) {
+  }
 
 }
 
