@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators, FormArray} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -15,8 +15,9 @@ form: FormGroup
     address: new FormGroup({
       country: new FormControl('ru'),
       city: new FormControl('', Validators.required)
-    })
+    }),
 
+skills: new FormArray([])
   })
   }
 
@@ -41,5 +42,14 @@ form: FormGroup
       address:{city:city}
     })
   }
+
+  addSkill() {
+const control = new FormControl('', Validators.required);
+    // (<FormArray>this.form.get('skills'))//одинаковая запись
+    (this.form.get('skills') as FormArray).push(control)
+  }
+
+
+
 }
 
