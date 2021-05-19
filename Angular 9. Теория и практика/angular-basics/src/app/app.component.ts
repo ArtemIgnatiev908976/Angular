@@ -1,19 +1,14 @@
 import {Component, OnInit} from '@angular/core'
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent  {
+export class AppComponent implements OnInit {
 
+  ngOnInit() {
 
- appState = 'off'
-
-
-  handleChange() {
-    console.log(this.appState)
   }
 }
 
