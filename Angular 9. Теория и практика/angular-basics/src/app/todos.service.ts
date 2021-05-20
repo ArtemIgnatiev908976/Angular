@@ -11,7 +11,8 @@ export interface Todo {
 
 @Injectable({providedIn: 'root'})
 export class TodosService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   addTodo(todo: Todo): Observable<Todo> {
     return this.http.post<Todo>('https://jsonplaceholder.typicode.com/todos', todo)
@@ -24,5 +25,13 @@ export class TodosService {
 
   removeTodo(id: number): Observable<void> {
     return this.http.delete<void>(`https://jsonplaceholder.typicode.com/todos/${id}`)
+  }
+
+
+  completeTodo(id: number): Observable<Todo> {
+    return this.http.put<Todo>(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+      completed: true
+    })
+
   }
 }
