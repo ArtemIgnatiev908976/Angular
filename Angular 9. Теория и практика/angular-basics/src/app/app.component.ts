@@ -20,6 +20,7 @@ loading =false
 
   todoTitle = ''
 
+
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
@@ -54,6 +55,13 @@ this.fetchTodos()
         console.log('Response', todos)
         this.todos = todos
         this.loading = false
+      })
+  }
+
+  removeTodo(id: number) {
+    this.http.delete<void>(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .subscribe(resp=>{
+       this.todos = this.todos.filter(t => t.id!==id)
       })
   }
 }
