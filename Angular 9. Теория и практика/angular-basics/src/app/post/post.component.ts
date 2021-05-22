@@ -7,24 +7,25 @@ import {Post, PostsService} from "../posts.service";
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent implements OnInit{
+export class PostComponent implements OnInit {
 
   post: Post
-constructor(
-  private route: ActivatedRoute,
-  private router: Router,
-  private postService: PostsService
 
-) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private postService: PostsService
+  ) {
+  }
 
-  ngOnInit(): void{
-  this.route.params.subscribe((params: Params)=>{
-    console.log(params)
-   this.post = this.postService.getById(+params.id)  // + строку в число
-  })
+  ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+      console.log(params)
+      this.post = this.postService.getById(+params.id)  // + строку в число
+    })
   }
 
   loadPost() {
-this.router.navigate(['/posts', 44])
+    this.router.navigate(['/posts', 44])
   }
 }
