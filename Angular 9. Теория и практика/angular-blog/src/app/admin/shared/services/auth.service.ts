@@ -7,8 +7,8 @@ import {catchError, tap} from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
-  public error$: Subject<string> = new Subject<string>()
 
+  public error$: Subject<string> = new Subject<string>()
 
   constructor(private http: HttpClient) {}
 
@@ -38,12 +38,12 @@ export class AuthService {
     return !!this.token
   }
 
-  private handleError(error: HttpErrorResponse){
-const {message} =error.error.error
+  private handleError(error: HttpErrorResponse) {
+    const {message} = error.error.error
 
-    switch (message){
+    switch (message) {
       case 'INVALID_EMAIL':
-this.error$.next('Неверный email')
+        this.error$.next('Неверный email')
         break
       case 'INVALID_PASSWORD':
         this.error$.next('Неверный пароль')
@@ -52,8 +52,9 @@ this.error$.next('Неверный email')
         this.error$.next('Такого email нет')
         break
     }
+
     return throwError(error)
-}
+  }
 
   private setToken(response: FbAuthResponse | null) {
     if (response) {
